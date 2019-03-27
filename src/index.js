@@ -1,10 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import HttpsRedirect from 'react-https-redirect';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css';
+import Root from './root';
+import App from './screen/App';
+
+
+ReactDOM.render(
+  <Root
+    initialState={{ }}
+  >
+    <HttpsRedirect>
+      <App />
+    </HttpsRedirect>
+  </Root>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
