@@ -16,6 +16,7 @@ export const signInAction = (user, token, callback) => async dispatch => {
     setAxiosHeader();
     const res = await axios.get(`${firebaseUrl}fetchUserData`);
 
+    console.log(res.data);
     dispatch({ type: AUTH_USER, payload: !!user });   
     dispatch({
       type: FETCH_USER,
